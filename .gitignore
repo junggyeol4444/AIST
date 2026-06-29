@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+
+# Secrets / local config
+.env
+*.local.yaml
+config/secrets.yaml
+
+# Model weights & large assets (tracked dirs are kept via .gitkeep)
+llm/models/*
+!llm/models/.gitkeep
+tts/voice_models/*
+!tts/voice_models/.gitkeep
+
+# Data (raw recordings, transcripts, persona cache)
+data/voice_recordings/*
+!data/voice_recordings/.gitkeep
+data/transcripts/*
+!data/transcripts/.gitkeep
+data/personas_cache/*
+!data/personas_cache/.gitkeep
+
+# Logs & runtime
+logs/
+*.log
+*.wav
+*.mp3
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

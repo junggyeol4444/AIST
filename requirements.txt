@@ -1,0 +1,49 @@
+# ===========================================================================
+# AIST - AI Streamer  /  requirements.txt
+# Phase 0 baseline. Items gated by [MUST DECIDE] are commented until chosen.
+# Target: Python 3.11, CUDA 12.x, single GPU (12-16GB VRAM)
+# ===========================================================================
+
+# --- Core / async ---
+pyyaml>=6.0
+aiohttp>=3.9
+fastapi>=0.110
+uvicorn[standard]>=0.29
+websockets>=12.0
+pydantic>=2.6
+python-dotenv>=1.0
+loguru>=0.7
+
+# --- LLM [D1: model choice pending] ---
+# Default engine = Ollama (easiest to install/operate, per plan recommendation).
+ollama>=0.2
+# Alternatives (uncomment if you switch engines):
+# vllm
+# llama-cpp-python
+
+# --- Dataset (Nemotron-Personas-Korea) ---
+datasets>=2.19
+huggingface_hub>=0.23
+pandas>=2.2
+
+# --- TTS [D5: model choice pending] ---
+# Default target = GPT-SoVITS (installed separately as its own repo/env).
+# These are the shared audio deps used regardless of TTS engine:
+torch>=2.1
+torchaudio>=2.1
+numpy>=1.26
+soundfile>=0.12
+librosa>=0.10
+
+# --- Audio output / virtual cable routing ---
+sounddevice>=0.4
+# pyaudio          # optional; needs portaudio system lib
+
+# --- Platform chat collectors [D6: platform choice pending] ---
+# Uncomment only the one(s) you need after deciding the platform:
+# chzzk            # Chzzk (unofficial)
+# twitchio         # Twitch
+# google-api-python-client   # YouTube Live
+
+# --- Dev / test ---
+pytest>=8.0

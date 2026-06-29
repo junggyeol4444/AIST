@@ -1,0 +1,62 @@
+# ===========================================================================
+# AIST - Global settings (Phase 0 skeleton)
+# Values marked TODO/[MUST DECIDE] are filled once the decision is made.
+# ===========================================================================
+
+broadcast:
+  # Operating cadence
+  target_hours_per_day: 8
+  mode: "talk"            # talk | game  (Phase 6)
+  timezone: "Asia/Seoul"
+
+llm:
+  # [D1] engine + model
+  engine: "ollama"        # ollama | vllm | llama_cpp
+  model: "TODO"           # e.g. qwen2.5:14b-instruct-q4_K_M
+  host: "http://localhost:11434"
+  temperature: 0.8
+  repetition_penalty: 1.1
+  max_tokens: 256
+  context:
+    sliding_window_turns: 20      # recent turns kept verbatim
+    summarize_every_minutes: 30   # compress older history into long-term memory
+
+tts:
+  # [D5] engine
+  engine: "gpt_sovits"    # gpt_sovits | xtts | elevenlabs
+  voice_model_path: "tts/voice_models/"
+  sample_rate: 32000
+  prosody_tokens: ["<pause>", "<laugh>", "<sigh>", "<hmm>"]
+
+audio_output:
+  # Virtual cable name as seen by the OS (VB-CABLE / VoiceMeeter)
+  virtual_cable_device: "CABLE Input"
+
+overlay:
+  host: "127.0.0.1"
+  port: 8080
+  font_family: "Noto Sans KR"
+  font_size_px: 22
+  position: "bottom"      # bottom | top
+  flow: "up"              # up | down
+  fade_in_ms: 250
+  message_ttl_seconds: 25 # how long a message stays before fade-out
+
+fake_chat:
+  # See [10] D4 - average messages per minute (set after decision)
+  avg_messages_per_minute: "TODO"
+  # Ethics/transparency: how the simulated chat is labelled to the audience.
+  # disclosed | undisclosed  -> pending your decision (see chat thread).
+  disclosure: "TODO"
+  persona_cooldown_seconds: 45
+  max_concurrent_active_personas: 4
+  typo_probability: 0.05
+
+platform:
+  # [D6] streaming platform - see config/platform.yaml once chosen
+  name: "TODO"            # chzzk | soop | youtube | twitch
+
+logging:
+  level: "INFO"
+  file: "logs/aist.log"
+  # discord_webhook: ""   # optional alerts (Phase 7)
