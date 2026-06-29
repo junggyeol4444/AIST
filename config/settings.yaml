@@ -12,7 +12,8 @@ broadcast:
 llm:
   # [D1] engine + model
   engine: "ollama"        # ollama | vllm | llama_cpp
-  model: "TODO"           # e.g. qwen2.5:14b-instruct-q4_K_M
+  # [D1] default = Qwen2.5-14B 4bit (balanced; Apache-2.0). Override freely.
+  model: "qwen2.5:14b-instruct-q4_K_M"
   host: "http://localhost:11434"
   temperature: 0.8
   repetition_penalty: 1.1

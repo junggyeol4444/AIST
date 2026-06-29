@@ -4,7 +4,7 @@
 본인 목소리로 클로닝된 TTS + 로컬 LLM으로 토크/게임 방송을 진행하고,
 OBS 위에 채팅 오버레이를 띄운다. 진짜 시청자 채팅을 읽고 반응한다.
 
-> 상태: **Phase 0 (환경/구조 스캐폴딩)**. 아래 "결정 필요" 항목 확정 후 Phase 1 진행.
+> 상태: **Phase 1 (페르소나 + LLM 단독 동작)**. Ollama 없이도 mock 백엔드로 검증 가능.
 
 ## 아키텍처 개요
 
@@ -51,6 +51,27 @@ pytest -q                                            # import/설정 스모크 �
 ```
 
 > LLM/TTS/플랫폼 의존성 일부는 결정 후 `requirements.txt`에서 주석 해제.
+
+테스트는 `pytest -q` 또는 의존성 없이 `python tests/run_checks.py`로 실행.
+
+## Phase 1 사용법
+
+페르소나 시스템 + LLM 래퍼가 동작한다. **mock 백엔드**는 모델/서버 없이 배선을
+검증하고, **ollama 백엔드**는 실제 응답을 생성한다.
+
+```bash
+# 모델/서버 없이 파이프라인 확인 (mock)
+python scripts/persona_chat.py --role streamer --backend mock
+python scripts/persona_chat.py --role viewer  --backend mock --count 8
+
+# 실제 LLM (Ollama 설치 + 모델 pull 후)
+ollama pull qwen2.5:14b-instruct-q4_K_M
+python scripts/persona_chat.py --role streamer --backend ollama
+```
+
+- 방송인 페르소나: `config/streamer_persona.yaml` (D2/D3 — 본인 설정으로 교체)
+- 시청자 페르소나: `config/viewer_personas.yaml` (Nemotron 스키마 기반 큐레이션 10종)
+- Nemotron에서 재생성: `python scripts/load_personas.py --num 10` (datasets + 네트워크 필요)
 
 ## 결정 필요 (진행 순서)
 

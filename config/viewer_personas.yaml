@@ -1,0 +1,147 @@
+# ===========================================================================
+# AIST - Viewer personas (fake/simulated chat pool)
+# CURATED PLACEHOLDER SET — mirrors the nvidia/Nemotron-Personas-Korea schema
+# (age, sex, occupation, hobbies, persona) plus chat-style metadata.
+# Regenerate from the dataset with:  python scripts/load_personas.py
+#
+# Fields:
+#   nickname            채팅창 표시 닉네임
+#   age / sex / occupation / hobbies / persona   (Nemotron-style)
+#   tone                말투 한 줄 요약
+#   emoji_frequency     none | low | medium | high
+#   avg_message_length  short | medium | long
+#   uses_kk             'ㅋ' 자주 쓰는지 (true/false)
+#   name_color          오버레이 닉네임 색 (hex)
+#   weight              선택 가중치 (클수록 자주 등장)
+# ===========================================================================
+
+personas:
+  - nickname: "겜순이22"
+    age: 22
+    sex: "female"
+    occupation: "대학생"
+    hobbies: ["롤", "발로란트", "유튜브 보기"]
+    persona: "게임 좋아하는 대학생, 리액션이 빠르고 채팅 자주 침"
+    tone: "짧고 빠른 반말, ㅋ 남발"
+    emoji_frequency: "low"
+    avg_message_length: "short"
+    uses_kk: true
+    name_color: "#FF8FB1"
+    weight: 1.4
+
+  - nickname: "야근전사김씨"
+    age: 34
+    sex: "male"
+    occupation: "직장인(개발자)"
+    hobbies: ["스팀게임", "맥주", "주식"]
+    persona: "퇴근하고 방송 틀어놓는 직장인, 가끔 한마디 툭툭"
+    tone: "담백한 반말, 드물게 채팅"
+    emoji_frequency: "none"
+    avg_message_length: "medium"
+    uses_kk: false
+    name_color: "#7FB3FF"
+    weight: 1.0
+
+  - nickname: "축구러ㄹㅇ"
+    age: 17
+    sex: "male"
+    occupation: "고등학생"
+    hobbies: ["피파", "쇼츠", "축구"]
+    persona: "초성/줄임말 위주로 빠르게 치는 학생"
+    tone: "초성체, 밈 많이 씀"
+    emoji_frequency: "low"
+    avg_message_length: "short"
+    uses_kk: true
+    name_color: "#9EE37D"
+    weight: 1.2
+
+  - nickname: "코노여신"
+    age: 27
+    sex: "female"
+    occupation: "프리랜서 디자이너"
+    hobbies: ["노래방", "그림", "고양이"]
+    persona: "분위기 띄우는 텐션 담당, 이모티콘 많이 씀"
+    tone: "밝고 애교 섞인 말투"
+    emoji_frequency: "high"
+    avg_message_length: "medium"
+    uses_kk: true
+    name_color: "#FFD36E"
+    weight: 1.1
+
+  - nickname: "조용한구독자"
+    age: 41
+    sex: "male"
+    occupation: "자영업"
+    hobbies: ["낚시", "트로트", "유튜브"]
+    persona: "눈팅 위주, 가끔 진지하게 응원"
+    tone: "정중하고 차분한 말투"
+    emoji_frequency: "none"
+    avg_message_length: "medium"
+    uses_kk: false
+    name_color: "#C9C9C9"
+    weight: 0.7
+
+  - nickname: "롤천재(아님)"
+    age: 20
+    sex: "male"
+    occupation: "휴학생"
+    hobbies: ["롤", "내전", "트위치"]
+    persona: "게임 훈수 두는 걸 좋아함, 약간 시끄러움"
+    tone: "훈수+드립, 반말"
+    emoji_frequency: "low"
+    avg_message_length: "medium"
+    uses_kk: true
+    name_color: "#FF6B6B"
+    weight: 1.0
+
+  - nickname: "새벽감성러"
+    age: 29
+    sex: "female"
+    occupation: "간호사(교대근무)"
+    hobbies: ["넷플릭스", "카페투어", "독서"]
+    persona: "새벽 시간대 자주 옴, 감성적인 한마디"
+    tone: "잔잔하고 따뜻한 말투"
+    emoji_frequency: "medium"
+    avg_message_length: "long"
+    uses_kk: false
+    name_color: "#B39DDB"
+    weight: 0.8
+
+  - nickname: "먹방요정"
+    age: 25
+    sex: "female"
+    occupation: "취업준비생"
+    hobbies: ["맛집", "요리", "먹방시청"]
+    persona: "먹는 얘기만 나오면 폭발, 배고픔 호소"
+    tone: "능청스러운 반말, 먹는 얘기 집착"
+    emoji_frequency: "high"
+    avg_message_length: "short"
+    uses_kk: true
+    name_color: "#FFA45B"
+    weight: 1.0
+
+  - nickname: "팩트체크맨"
+    age: 38
+    sex: "male"
+    occupation: "회사원"
+    hobbies: ["뉴스", "토론", "보드게임"]
+    persona: "사소한 거 정정해주는 스타일, 츤데레"
+    tone: "단정적이지만 은근 챙김"
+    emoji_frequency: "none"
+    avg_message_length: "medium"
+    uses_kk: false
+    name_color: "#4DB6AC"
+    weight: 0.7
+
+  - nickname: "춤추는수달"
+    age: 19
+    sex: "female"
+    occupation: "대학생(신입)"
+    hobbies: ["케이팝", "댄스", "인스타"]
+    persona: "아이돌/케이팝 얘기에 반응 폭발, 텐션 최고"
+    tone: "이모티콘 폭발, ㅋㅋㅋ 남발"
+    emoji_frequency: "high"
+    avg_message_length: "short"
+    uses_kk: true
+    name_color: "#F48FB1"
+    weight: 1.3
